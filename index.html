@@ -1,0 +1,555 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>وليد ستور | تيشرتات مطبوعة</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d6ad60;
+    --black: #0b0b0b;
+    --card: #171717;
+    --white: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.7;
+}
+
+/* الشريط العلوي */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #111;
+    border-bottom: 1px solid #302719;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* الواجهة الرئيسية */
+.hero {
+    min-height: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    background:
+        radial-gradient(ellipse at center, #302719 0%, #0b0b0b 75%);
+}
+
+.hero .tag {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    color: #ccc;
+    max-width: 550px;
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--gold);
+    color: #111;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #f0cf89;
+    transform: translateY(-3px);
+}
+
+/* عنوان الأقسام */
+.products {
+    padding: 65px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.section-title span {
+    color: var(--gold);
+}
+
+.section-description {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 35px;
+}
+
+/* بطاقات المنتجات */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product {
+    background: var(--card);
+    border: 1px solid #292929;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.product:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    background: #222;
+    display: block;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.product-description {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.price {
+    color: var(--gold);
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* خيارات المنتج */
+.option-label {
+    display: block;
+    font-size: 14px;
+    margin: 12px 0 5px;
+    color: #ddd;
+}
+
+select {
+    width: 100%;
+    padding: 11px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background: #222;
+    color: white;
+    font-size: 15px;
+}
+
+select:focus {
+    outline: 1px solid var(--gold);
+}
+
+/* زر الطلب */
+.buy-btn {
+    display: block;
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    background: var(--gold);
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: #f0cf89;
+}
+
+/* قسم المميزات */
+.features {
+    background: #141414;
+    padding: 45px 8%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.feature {
+    padding: 15px;
+}
+
+.feature h3 {
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+/* التواصل */
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    background: #080808;
+    border-top: 1px solid #302719;
+    color: #aaa;
+}
+
+footer h3 {
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+/* الهاتف */
+@media (max-width: 750px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 5%;
+    }
+
+    nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products {
+        padding: 45px 6%;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- القائمة العلوية -->
+<header>
+    <div class="logo">WALEED STORE</div>
+
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#products">التيشرتات</a>
+        <a href="#contact">تواصل معنا</a>
+    </nav>
+</header>
+
+<!-- الواجهة الرئيسية -->
+<section class="hero" id="home">
+
+    <div class="tag">PRINTED T-SHIRTS COLLECTION</div>
+
+    <h1>عبّر عن <span>أسلوبك</span></h1>
+
+    <p>
+        تيشرتات مطبوعة برسومات وعبارات مميزة.
+        اختر التصميم الذي يشبهك واطلبه بسهولة.
+    </p>
+
+    <a href="#products" class="btn">اكتشف التيشرتات</a>
+
+</section>
+
+<!-- المنتجات -->
+<section class="products" id="products">
+
+    <h2 class="section-title">
+        مجموعة <span>التيشرتات</span>
+    </h2>
+
+    <p class="section-description">
+        اختر تصميمك، مقاسك، ولونك المفضل.
+    </p>
+
+    <div class="product-grid">
+
+        <!-- المنتج الأول -->
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700"
+                alt="تيشرت بطباعة ستريت وير"
+            >
+
+            <div class="product-info">
+
+                <h3>تيشرت ستريت وير</h3>
+
+                <p class="product-description">
+                    تصميم شبابي بطابع عصري.
+                </p>
+
+                <div class="price">25,000 جنيه</div>
+
+                <label class="option-label">المقاس</label>
+                <select class="size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                </select>
+
+                <label class="option-label">اللون</label>
+                <select class="color">
+                    <option value="أسود">أسود</option>
+                    <option value="أبيض">أبيض</option>
+                    <option value="رمادي">رمادي</option>
+                </select>
+
+                <button class="buy-btn"
+                    onclick="orderProduct(this, 'تيشرت ستريت وير', '25000')">
+                    اطلب عبر واتساب
+                </button>
+
+            </div>
+        </div>
+
+        <!-- المنتج الثاني -->
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700"
+                alt="تيشرت بطباعة عبارة"
+            >
+
+            <div class="product-info">
+
+                <h3>تيشرت عبارة مميزة</h3>
+
+                <p class="product-description">
+                    تيشرت بطباعة عبارة تعبّر عن شخصيتك.
+                </p>
+
+                <div class="price">28,000 جنيه</div>
+
+                <label class="option-label">المقاس</label>
+                <select class="size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                </select>
+
+                <label class="option-label">اللون</label>
+                <select class="color">
+                    <option value="أسود">أسود</option>
+                    <option value="أبيض">أبيض</option>
+                    <option value="رمادي">رمادي</option>
+                </select>
+
+                <button class="buy-btn"
+                    onclick="orderProduct(this, 'تيشرت عبارة مميزة', '28000')">
+                    اطلب عبر واتساب
+                </button>
+
+            </div>
+        </div>
+
+        <!-- المنتج الثالث -->
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700"
+                alt="تيشرت بطباعة جرافيك"
+            >
+
+            <div class="product-info">
+
+                <h3>تيشرت جرافيك</h3>
+
+                <p class="product-description">
+                    تصميم برسمة فنية لمحبي الجرافيك.
+                </p>
+
+                <div class="price">30,000 جنيه</div>
+
+                <label class="option-label">المقاس</label>
+                <select class="size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                </select>
+
+                <label class="option-label">اللون</label>
+                <select class="color">
+                    <option value="أسود">أسود</option>
+                    <option value="أبيض">أبيض</option>
+                    <option value="رمادي">رمادي</option>
+                </select>
+
+                <button class="buy-btn"
+                    onclick="orderProduct(this, 'تيشرت جرافيك', '30000')">
+                    اطلب عبر واتساب
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- مميزات المتجر -->
+<section class="features">
+
+    <div class="feature">
+        <h3>تصاميم مميزة</h3>
+        <p>رسومات وعبارات متنوعة.</p>
+    </div>
+
+    <div class="feature">
+        <h3>مقاسات متعددة</h3>
+        <p>اختر المقاس المناسب لك.</p>
+    </div>
+
+    <div class="feature">
+        <h3>طلب سهل</h3>
+        <p>اطلب مباشرة عبر واتساب.</p>
+    </div>
+
+</section>
+
+<!-- التذييل -->
+<footer id="contact">
+
+    <h3>WALEED STORE</h3>
+
+    <p>تيشرتات مطبوعة تعبّر عنك.</p>
+
+    <p>
+        للاستفسارات والطلبات:
+        <a href="#" onclick="contactStore(); return false;">
+            تواصل معنا عبر واتساب
+        </a>
+    </p>
+
+    <p>© 2026 Waleed Store - جميع الحقوق محفوظة</p>
+
+</footer>
+
+<script>
+
+// ضع رقم واتساب المتجر هنا
+// استخدم مفتاح الدولة ثم الرقم بدون + أو مسافات
+const storePhone = "249 123163626";
+
+function orderProduct(button, productName, price) {
+
+    const product = button.closest(".product");
+
+    const size = product.querySelector(".size").value;
+    const color = product.querySelector(".color").value;
+
+    if (storePhone === "249 123163626") {
+        alert("يرجى إضافة رقم واتساب المتجر أولاً داخل الكود.");
+        return;
+    }
+
+    const message =
+        "السلام عليكم، أريد طلب المنتج التالي:\n" +
+        "المنتج: " + productName + "\n" +
+        "المقاس: " + size + "\n" +
+        "اللون: " + color + "\n" +
+        "السعر: " + price + " جنيه";
+
+    const url =
+        "https://wa.me/" + storePhone +
+        "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+
+function contactStore() {
+
+    if (storePhone === "249 116600094") {
+        alert("يرجى إضافة رقم واتساب المتجر أولاً داخل الكود.");
+        return;
+    }
+
+    window.open("https://wa.me/" + storePhone, "_blank");
+}
+
+</script>
+
+</body>
+</html>
